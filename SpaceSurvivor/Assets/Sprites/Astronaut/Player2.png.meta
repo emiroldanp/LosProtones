@@ -1,0 +1,700 @@
+fileFormatVersion: 2
+guid: bc275ea0380be472e9b722936473f79c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2833191984144723704
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_0
+  - first:
+      213: 2255778797837628605
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_1
+  - first:
+      213: -7140738247704521688
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_2
+  - first:
+      213: -3735585230056911231
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_3
+  - first:
+      213: 5605329612705915217
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_4
+  - first:
+      213: 8055029155307345925
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_5
+  - first:
+      213: 6144511611362146285
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_6
+  - first:
+      213: 1922484716276602214
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_7
+  - first:
+      213: 8371047231476284342
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_8
+  - first:
+      213: 7916380482076859826
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_9
+  - first:
+      213: -5504700191935510508
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_10
+  - first:
+      213: 720289750771661044
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_11
+  - first:
+      213: -8819444641489628195
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_12
+  - first:
+      213: -8923284160197601283
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_13
+  - first:
+      213: 3997273836851082469
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_14
+  - first:
+      213: -8855653165400977258
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_15
+  - first:
+      213: 521629157371984921
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_16
+  - first:
+      213: -1961890586474415605
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_17
+  - first:
+      213: -7027359399937565959
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_18
+  - first:
+      213: 1912106353632511448
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_19
+  - first:
+      213: 5205635621747727464
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_20
+  - first:
+      213: 4149185387183178868
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_21
+  - first:
+      213: 3976040643476866843
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_22
+  - first:
+      213: -1039423774127363592
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_23
+  - first:
+      213: 6977646543006818828
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_24
+  - first:
+      213: 686580692146744649
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_25
+  - first:
+      213: 9040232059312098207
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_26
+  - first:
+      213: 4332839770231968669
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_27
+  - first:
+      213: 1615443265955112681
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_28
+  - first:
+      213: 918586109182460655
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_29
+  - first:
+      213: -5840596402878865466
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_30
+  - first:
+      213: 2735728457848761511
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_31
+  - first:
+      213: 8810153568050809093
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_32
+  - first:
+      213: -1368582709528911737
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_33
+  - first:
+      213: 5734781753114069834
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_34
+  - first:
+      213: 3934691250258136034
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_35
+  - first:
+      213: 6622939215764279494
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_36
+  - first:
+      213: 5360024028935397129
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_37
+  - first:
+      213: -3596559836603254462
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_38
+  - first:
+      213: -2259593617173490596
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_39
+  - first:
+      213: -1926816741070460425
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_40
+  - first:
+      213: 5141387823867347070
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_41
+  - first:
+      213: -7294064803271499656
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_42
+  - first:
+      213: -4871244169773798010
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_43
+  - first:
+      213: -3759550834558565282
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_44
+  - first:
+      213: -4368070667672401890
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_45
+  - first:
+      213: -7546760076342143613
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_46
+  - first:
+      213: -5585568778818880781
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_47
+  - first:
+      213: 3879248555186433379
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_48
+  - first:
+      213: 7439717002833436609
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_49
+  - first:
+      213: 4262624754327326148
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_50
+  - first:
+      213: -8467816552433365527
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_51
+  - first:
+      213: -6424022469845266219
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_52
+  - first:
+      213: 1018214987524384335
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_53
+  - first:
+      213: -2513545316068031837
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_54
+  - first:
+      213: 96301905539821123
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_55
+  - first:
+      213: -8459279324586738981
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_56
+  - first:
+      213: -7615353965107284346
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_57
+  - first:
+      213: -7316299388614684251
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_58
+  - first:
+      213: 2565298646724755280
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_59
+  - first:
+      213: 4429792314011270497
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_60
+  - first:
+      213: 5656148067544988467
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_61
+  - first:
+      213: 1096946176165291072
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_62
+  - first:
+      213: -4259652113850838076
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_63
+  - first:
+      213: -138140286800386319
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_64
+  - first:
+      213: 4372208169665836604
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_65
+  - first:
+      213: 2976433775679000323
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_66
+  - first:
+      213: 2943992409741403078
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_67
+  - first:
+      213: 9033917616162516565
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_68
+  - first:
+      213: 7540767350670632984
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_69
+  - first:
+      213: 2720082022677180232
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_70
+  - first:
+      213: -8978393069093133366
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_71
+  - first:
+      213: 5412544886571313211
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_72
+  - first:
+      213: -5225170479443082171
+    second: Screen Shot 2020-03-25 at 9.35.05 copy_73
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 633
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801d19cb6ea7ea8d0800000000000000
+      internalID: -2833191984144723704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 633
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db438f07dd22e4f10800000000000000
+      internalID: 2255778797837628605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 633
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824d68f956007ec90800000000000000
+      internalID: -7140738247704521688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_3
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 633
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e03467609882cc0800000000000000
+      internalID: -3735585230056911231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_4
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 633
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151605e95912acd40800000000000000
+      internalID: 5605329612705915217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 473
+        width: 159
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5085281e65639cf60800000000000000
+      internalID: 8055029155307345925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_6
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 475
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7f08961c0b54550800000000000000
+      internalID: 6144511611362146285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 477
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665d8c7e9a90eaa10800000000000000
+      internalID: 1922484716276602214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_8
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 480
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb3926fa1feb2470800000000000000
+      internalID: 8371047231476284342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_9
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 477
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdd60d0b12acdd60800000000000000
+      internalID: 7916380482076859826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_10
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 480
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418c8a037506b93b0800000000000000
+      internalID: -5504700191935510508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_11
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 480
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8791a46bbfef900800000000000000
+      internalID: 720289750771661044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_12
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 480
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3d9c373d90b9580800000000000000
+      internalID: -8819444641489628195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 327
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df75d8975502a2480800000000000000
+      internalID: -8923284160197601283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screen Shot 2020-03-25 at 9.35.05 copy_14
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 327
+        width: 154
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4b87b406b297730800000000000000
+      internalID: 3997273836851082469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
