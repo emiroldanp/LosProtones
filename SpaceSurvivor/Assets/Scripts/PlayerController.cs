@@ -1,122 +1,81 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
 
-	public float moveSpeed;
-	private Vector2 moveInput;
-
-    public Rigidbody2D rigidBody;
-    public Camera camera;
-    Vector2 mousePosition;
-
-    public Transform gunArm;
-
-
-    public Animator anim;
-
-    bool isRunning = false;
-
-
-
-
-    public GameObject bulletToFire;
-    public Transform firePoint;
-
-
-
-
-
-    //public Animator anim2;
-
-
-
-
+    public int life;
+    public float health;
+    public SpriteRenderer spriteRenderer;
+    public Color initialColor;
+    
+    
+    public HealthBarController healthBar;
+    
     // Start is called before the first frame update
     void Start()
     {
-        camera = Camera.main;
+        health = life/30f;
+        Debug.Log(health);
+        
+        initialColor = spriteRenderer.color;
 
-        anim = GetComponent<Animator> ();
-
-       
     }
 
     // Update is called once per frame
     void Update()
     {
 
-    	moveInput.x = Input.GetAxisRaw("Horizontal");
-
-    	moveInput.y = Input.GetAxisRaw("Vertical");
-
-        moveInput.Normalize();
-
-
-        rigidBody.velocity = moveInput * moveSpeed;
-
-        //mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
-
-
-
-        Vector3 mousePos = Input.mousePosition;
-
-        Vector3 screenPoint = camera.WorldToScreenPoint(transform.localPosition);
-
-
-        if (mousePos.x < screenPoint.x){
-
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-            gunArm.localScale = new Vector3(-1f,-1f,1f);
-
-        } else{
-
-            transform.localScale = Vector3.one;
-            gunArm.localScale = Vector3.one;
-
-
-
-
-        } 
-
-
-
-        //rotate gun arm
-
-        Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
-        float angle = Mathf.Atan2(offset.y, offset.x)* Mathf.Rad2Deg;
-        gunArm.rotation = Quaternion.Euler(0,0,angle);
-
-
-        if(Input.GetMouseButtonDown(0)){
-
-            Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
-
-
-
+     
+        if (health >= 0){
+            healthBar.setSize(health);
         }
-
-
-
-
-
-
-        if(moveInput != Vector2.zero){
-
-            anim.SetBool("isRunning",true);
-
-        } else {
-
-            anim.SetBool("isRunning",false);
+        if(health <= .5 && health > .2){
+            healthBar.setColor(Color.yellow);
         }
-
+        if(health <= .2){
+            healthBar.setColor(Color.red);
+        }
+        
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+        gameObject.transform.Translate(new Vector3(x/8,y/8,0));
+        
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collider){
+        
+        if(collider.gameObject.tag.Equals("Enemy")){
+            spriteRenderer.color = Color.red;
+            InvokeRepeating("resetColor",1,0);
+            life--;
+            if(life == 0){
+                Destroy(gameObject);
+            }
+        }
+        if(collider.gameObject.tag.Equals("EnemyMissile")){
+            spriteRenderer.color = Color.red;
+            InvokeRepeating("resetColor",1,0);
+            Destroy(collider.gameObject);
+            life--;
+            health = life/30f;
+            if(life == 0){
+                Destroy(gameObject);
+                SceneManager.LoadScene(1);
+            }
+        }
+    }
+    
+    private void resetColor(){
+        spriteRenderer.color = initialColor;
+    }
 
 }
 
 
 
 
-    }
+    
 
