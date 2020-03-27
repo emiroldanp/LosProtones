@@ -374,6 +374,8 @@ GameObject:
   m_Component:
   - component: {fileID: 191879931}
   - component: {fileID: 191879930}
+  - component: {fileID: 191879933}
+  - component: {fileID: 191879932}
   m_Layer: 0
   m_Name: Player_4
   m_TagString: Untagged
@@ -446,6 +448,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &191879932
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191879929}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &191879933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191879929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc948ec9b0f7409babe810f1c8af71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rigidBody: {fileID: 191879932}
+  camera: {fileID: 262915224}
 --- !u!1 &214131610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,6 +2422,7 @@ GameObject:
   - component: {fileID: 1295806435}
   - component: {fileID: 1295806434}
   - component: {fileID: 1295806433}
+  - component: {fileID: 1295806437}
   - component: {fileID: 1295806436}
   m_Layer: 0
   m_Name: Player_2
@@ -2469,14 +2508,35 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295806432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.543, y: -0.32, z: 0}
   m_LocalScale: {x: 0.73360795, y: 0.80183357, z: 0.73360795}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1295806436
+--- !u!50 &1295806436
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295806432}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1295806437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2485,10 +2545,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1295806432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b8647c0776c4bd5bd8e524710e645b, type: 3}
+  m_Script: {fileID: 11500000, guid: fbc948ec9b0f7409babe810f1c8af71d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  speed: 5
+  rigidBody: {fileID: 1295806436}
+  camera: {fileID: 262915224}
 --- !u!1 &1318992366
 GameObject:
   m_ObjectHideFlags: 0
