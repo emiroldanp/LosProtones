@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 
 	public float moveSpeed;
 	private Vector2 moveInput;
+	//private bool facingRight = true;
+
+
 
     // Start is called before the first frame update
     void Start()
