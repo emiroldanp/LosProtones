@@ -8,16 +8,44 @@ public class AstronautMovement : MonoBehaviour
 	public float moveSpeed;
 	private Vector2 moveInput;
 
+    private float health;
+
+    private float oxygen;
+
+    public int maxHealthValue = 500;
+
+    public int maxOxygenValue = 400;
+
     public Rigidbody2D rigidBody;
     public Camera camera;
     Vector2 mousePosition;
 
     public Transform gunArm;
 
+    public RectTransform healthBar;
+    public RectTransform oxygenBar;
+
 
     public Animator anim;
 
     bool isRunning = false;
+
+    public HUDManager hud;
+
+    private float minXHealth;
+
+    private float maxXHealth;
+
+
+
+    private float minXOxygen;
+    private float maxXOxygen;
+
+  
+
+    
+
+
 
 
 
@@ -32,13 +60,26 @@ public class AstronautMovement : MonoBehaviour
 
         anim = GetComponent<Animator> ();
 
-       
+        
+
+        maxXHealth = healthBar.position.x;
+        minXHealth = healthBar.position.x - healthBar.rect.width;
+        health = maxHealthValue;
+
+        minXOxygen = oxygenBar.position.x - oxygenBar.rect.width;
+        maxXOxygen = oxygenBar.position.x;
+
+        oxygen = maxOxygenValue;
+
+        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     	moveInput.x = Input.GetAxisRaw("Horizontal");
 
     	moveInput.y = Input.GetAxisRaw("Vertical");
@@ -101,5 +142,97 @@ public class AstronautMovement : MonoBehaviour
             anim.SetBool("isRunning",false);
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Object"))
+        {
+            hud.showMessagePanel("Press F to pick up");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Object"))
+        {
+            hud.hideMessagePanel();
+        }
+    }
+
+
+    private float HUDValue(float x, float inMin, float inMax, float outMin, float outMax)
+    {
+        return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+    }
+
+
+    public void updateHealth()
+    {
+        if(health<= maxHealthValue)
+        {
+            float currentX = HUDValue(health, 0, maxHealthValue, minXHealth, maxXHealth);
+
+            
+
+            healthBar.position = new Vector3(currentX, healthBar.position.y);
+        }
+       
+
+
+
+    }
+
+    public void updateOxygen()
+    {
+        if(oxygen<= maxOxygenValue)
+        {
+            float currentX = HUDValue(oxygen, 0, maxOxygenValue, minXOxygen, maxXOxygen);
+
+            
+
+            oxygenBar.position = new Vector3(currentX, healthBar.position.y);
+        }
+        
+
+
+
+    }
+
+    public void increaseHealth(int amount)
+    {
+        health += amount;
+
+        updateHealth();
+    }
+
+
+    public void decreaseHealth(int amount)
+    {
+        health -= amount;
+        updateHealth();
+        
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void increaseOxygen(int amount)
+    {
+        oxygen += amount;
+
+        updateOxygen();
+    }
+
+    public void decreaseOxygen(int amount)
+    {
+        oxygen -= amount;
+        updateOxygen();
+
+        if (oxygen <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
