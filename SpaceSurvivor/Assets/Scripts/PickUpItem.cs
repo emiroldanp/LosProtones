@@ -35,6 +35,11 @@ public class PickUpItem : MonoBehaviour
                 am.increaseOxygen(50);
 
                 Destroy(gameObject);
+            }else if (gameObject.name.Equals("DamageObject"))
+            {
+                am = collision.gameObject.GetComponent<AstronautMovement>();
+                am.decreaseHealth(50);
+
             }
             else
             {
