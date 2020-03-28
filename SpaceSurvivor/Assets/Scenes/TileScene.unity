@@ -5949,10 +5949,10 @@ MonoBehaviour:
   rigidBody: {fileID: 748273350}
   camera: {fileID: 262915224}
   gunArm: {fileID: 1898074157}
-  healthBar: {fileID: 0}
-  oxygenBar: {fileID: 0}
+  healthBar: {fileID: 1309346587}
+  oxygenBar: {fileID: 1349192811}
   anim: {fileID: 748273346}
-  hud: {fileID: 0}
+  hud: {fileID: 1792770222}
   bulletToFire: {fileID: 3818108013678274969, guid: c10b32f3b8a534331a1fe634114e663f,
     type: 3}
   firePoint: {fileID: 244426039}
@@ -10279,7 +10279,7 @@ GameObject:
   - component: {fileID: 1309346589}
   - component: {fileID: 1309346588}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HBImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10676,7 +10676,7 @@ GameObject:
   - component: {fileID: 1349192813}
   - component: {fileID: 1349192812}
   m_Layer: 5
-  m_Name: Image
+  m_Name: OxyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26991,6 +26991,7 @@ GameObject:
   - component: {fileID: 1792770220}
   - component: {fileID: 1792770219}
   - component: {fileID: 1792770218}
+  - component: {fileID: 1792770222}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Enemy
@@ -27080,6 +27081,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1792770222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792770217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61cd75455963448e4890847de8e2b1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messagePanel: {fileID: 0}
 --- !u!1 &1837076054
 GameObject:
   m_ObjectHideFlags: 0
