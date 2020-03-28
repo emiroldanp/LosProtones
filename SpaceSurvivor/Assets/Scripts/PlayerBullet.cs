@@ -28,18 +28,12 @@ public class PlayerBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
 
 		if (other.gameObject.tag == "Enemy") {
-
+        
+        other.GetComponent<AlienController>().DamageEnemy(damageToGive);
 		Destroy(gameObject);
         Instantiate(impactEffect, transform.position, transform.rotation);
 
-		
 
-		if(other.tag == "Enemy"){
-
-				other.GetComponent<AlienController>().DamageEnemy(damageToGive);
-
-
-		}
         
      	}
 		
