@@ -57,16 +57,22 @@ public class AlienController : MonoBehaviour
 
         rb.velocity = moveDirection * moveSpeed;
 
+        if(anim != null)
+        {
+            if (moveDirection != Vector3.zero)
+            {
 
+                anim.SetBool("isRunning", true);
 
-        if(moveDirection != Vector3.zero){
+            }
+            else
+            {
 
-            anim.SetBool("isRunning",true);
-
-        } else {
-
-            anim.SetBool("isRunning",false);
+                anim.SetBool("isRunning", false);
+            }
         }
+
+        
 
 /*
         if(shouldShoot){

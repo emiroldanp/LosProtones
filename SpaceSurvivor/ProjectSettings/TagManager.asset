@@ -9,6 +9,7 @@ TagManager:
   - Missile
   - Enemy
   - Rock
+  - ShootingEnemy
   layers:
   - Default
   - TransparentFX
