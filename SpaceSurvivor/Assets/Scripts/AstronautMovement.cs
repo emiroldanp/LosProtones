@@ -146,18 +146,21 @@ public class AstronautMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Object"))
+        /*if (collision.gameObject.tag.Equals("Object"))
         {
             hud.showMessagePanel("Press F to pick up");
         }
+        */
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        /*
         if (collision.gameObject.tag.Equals("Object"))
         {
             hud.hideMessagePanel();
         }
+        */
     }
 
 
