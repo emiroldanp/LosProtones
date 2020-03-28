@@ -8,6 +8,10 @@ public class PlayerBullet : MonoBehaviour
 	public float speed = 10.0f;
 	public Rigidbody2D rb;
 
+	public GameObject impactEffect;
+
+	public int damageToGive = 50;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +25,32 @@ public class PlayerBullet : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other) {
 
-	{
+		if (other.gameObject.tag == "Enemy") {
 
 		Destroy(gameObject);
-	
+        Instantiate(impactEffect, transform.position, transform.rotation);
+
+		
+
+		if(other.tag == "Enemy"){
+
+				other.GetComponent<AlienController>().DamageEnemy(damageToGive);
+
+
+		}
+        
+     	}
+		
 	}
+
+
+	private void OnBecameInvisible(){
+
+		Destroy(gameObject);
+	}
+	
+
+
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AstronautMovement : MonoBehaviour
 {
+	public static AstronautMovement instance;
+
 
 	public float moveSpeed;
 	private Vector2 moveInput;
@@ -24,6 +26,13 @@ public class AstronautMovement : MonoBehaviour
 
     public GameObject bulletToFire;
     public Transform firePoint;
+
+
+
+    private void Awake(){
+
+    	instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

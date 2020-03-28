@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
     public int life;
     public float health;
     public SpriteRenderer spriteRenderer;
