@@ -16,6 +16,15 @@ public class AlienController : MonoBehaviour
 	public int health = 150;
 
 
+	//public bool shouldShoot;
+	//public GameObject bullet;
+
+	public Transform firePoint;
+	//public float fireRate;
+	//private float fireCounter;
+
+
+
 
 
 	//public int 
@@ -59,6 +68,21 @@ public class AlienController : MonoBehaviour
             anim.SetBool("isRunning",false);
         }
 
+/*
+        if(shouldShoot){
+
+        	fireCounter -= Time.deltaTime;
+
+        	if(fireCounter <= 0){
+
+        		Instantiate(bullet, firePoint.position, firePoint.rotation);
+
+        		fireCounter = fireRate;
+        		
+
+        	}
+
+        }*/
 
 
 
