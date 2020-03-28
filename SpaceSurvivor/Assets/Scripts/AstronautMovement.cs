@@ -160,6 +160,11 @@ public class AstronautMovement : MonoBehaviour
             hud.showMessagePanel("Press F to pick up");
         }
         */
+
+        if(collision.gameObject.tag.Equals("Enemy")){
+
+        	decreaseHealth(100);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
