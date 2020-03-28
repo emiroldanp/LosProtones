@@ -188,14 +188,17 @@ public class AstronautMovement : MonoBehaviour
 
     public void updateHealth()
     {
-        if(health<= maxHealthValue)
+        if(health > maxHealthValue)
         {
+            health = maxHealthValue;
+        }
+        
             float currentX = HUDValue(health, 0, maxHealthValue, minXHealth, maxXHealth);
 
             
 
             healthBar.position = new Vector3(currentX, healthBar.position.y);
-        }
+        
        
 
 
@@ -204,14 +207,17 @@ public class AstronautMovement : MonoBehaviour
 
     public void updateOxygen()
     {
-        if(oxygen <= maxOxygenValue)
+        if (oxygen > maxOxygenValue)
         {
+            oxygen = maxOxygenValue;
+        }
+        
             float currentX = HUDValue(oxygen, 0, maxOxygenValue, minXOxygen, maxXOxygen);
 
             
 
             oxygenBar.position = new Vector3(currentX, oxygenBar.position.y);
-        }
+        
         
 
 
