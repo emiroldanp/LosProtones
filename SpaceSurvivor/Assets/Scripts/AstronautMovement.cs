@@ -68,8 +68,8 @@ public class AstronautMovement : MonoBehaviour
         camera = Camera.main;
 
         anim = GetComponent<Animator> ();
+        InvokeRepeating("constantOxygenDecrease", 0f, 1);
 
-        
 
         maxXHealth = healthBar.position.x;
         minXHealth = healthBar.position.x - healthBar.rect.width;
@@ -88,6 +88,8 @@ public class AstronautMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         
     	moveInput.x = Input.GetAxisRaw("Horizontal");
 
@@ -202,13 +204,13 @@ public class AstronautMovement : MonoBehaviour
 
     public void updateOxygen()
     {
-        if(oxygen<= maxOxygenValue)
+        if(oxygen <= maxOxygenValue)
         {
             float currentX = HUDValue(oxygen, 0, maxOxygenValue, minXOxygen, maxXOxygen);
 
             
 
-            oxygenBar.position = new Vector3(currentX, healthBar.position.y);
+            oxygenBar.position = new Vector3(currentX, oxygenBar.position.y);
         }
         
 
@@ -251,5 +253,10 @@ public class AstronautMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void constantOxygenDecrease()
+    {
+        decreaseOxygen(1);
     }
 }
