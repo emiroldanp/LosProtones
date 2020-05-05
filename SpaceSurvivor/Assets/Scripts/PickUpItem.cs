@@ -41,6 +41,8 @@ public class PickUpItem : MonoBehaviour
                 am.decreaseHealth(50);
 
             }
+
+            
             else
             {
                 for (int i = 0; i < inventory.slots.Length; i++)
