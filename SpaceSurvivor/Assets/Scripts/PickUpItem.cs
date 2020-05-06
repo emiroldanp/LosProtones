@@ -22,20 +22,20 @@ public class PickUpItem : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            if (gameObject.name.Equals("HealthCanister"))
+            if (gameObject.tag.Equals("Health"))
             {
 
                 am = collision.gameObject.GetComponent<AstronautMovement>();
                 am.increaseHealth(100);
 
                 Destroy(gameObject);
-            }else if (gameObject.name.Equals("OxygenCanister"))
+            }else if (gameObject.tag.Equals("Oxygen"))
             {
                 am = collision.gameObject.GetComponent<AstronautMovement>();
                 am.increaseOxygen(50);
 
                 Destroy(gameObject);
-            }else if (gameObject.name.Equals("DamageObject"))
+            }else if (gameObject.tag.Equals("DamageObject"))
             {
                 am = collision.gameObject.GetComponent<AstronautMovement>();
                 am.decreaseHealth(50);

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4408179327574145374}
   m_Layer: 0
   m_Name: HealthCanister
-  m_TagString: Object
+  m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

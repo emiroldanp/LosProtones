@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3054174367523130425}
   m_Layer: 0
   m_Name: OxygenCanister
-  m_TagString: Untagged
+  m_TagString: Oxygen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

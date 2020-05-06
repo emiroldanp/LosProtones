@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - Rock
   - ShootingEnemy
+  - Oxygen
+  - Health
+  - DamageObject
   layers:
   - Default
   - TransparentFX
