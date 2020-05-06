@@ -18,8 +18,15 @@ public class MeteorBehavior : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collider){
         if(collider.gameObject.tag.Equals("Missile")){
+            SoundManager.PlaySound("MeteoriteDestroy");
             Destroy(gameObject);
             Destroy(collider.gameObject);
+        }
+
+        if (collider.gameObject.tag.Equals("Player"))
+        {
+            SoundManager.PlaySound("MeteoriteDestroy");
+            Destroy(gameObject);
         }
     }
 }

@@ -21,6 +21,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1158742162723846583, guid: ad2b50bb0de05447bb6620832a55ebc0,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158742162723846583, guid: ad2b50bb0de05447bb6620832a55ebc0,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.37
+      objectReference: {fileID: 0}
     - target: {fileID: 2559662237648851761, guid: ad2b50bb0de05447bb6620832a55ebc0,
         type: 3}
       propertyPath: m_Name
@@ -31,6 +41,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyMissile
       objectReference: {fileID: 0}
+    - target: {fileID: 3937625914803146518, guid: ad2b50bb0de05447bb6620832a55ebc0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: db72800797e494fd08b5a3ed7a45acdf,
+        type: 3}
     - target: {fileID: 4270460194226922899, guid: ad2b50bb0de05447bb6620832a55ebc0,
         type: 3}
       propertyPath: m_LocalPosition.x

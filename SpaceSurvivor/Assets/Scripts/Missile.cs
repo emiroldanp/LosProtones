@@ -9,6 +9,7 @@ public class Missile : MonoBehaviour
     public Rigidbody2D rigidBody;
     // Start is called before the first frame update
     void Start(){
+        SoundManager.PlaySound("LaserSound");
         rigidBody.velocity = transform.up * speed;
         Destroy(gameObject, 2f);
     }
