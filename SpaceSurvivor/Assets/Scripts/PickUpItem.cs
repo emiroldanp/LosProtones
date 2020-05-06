@@ -10,12 +10,23 @@ public class PickUpItem : MonoBehaviour
 
     private AstronautMovement am;
 
+    private bool ongoingDamage;
+
     
     // Start is called before the first frame update
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag.Equals("DamageObject"))
+        {
+            ongoingDamage = false;
+            CancelInvoke();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,8 +48,15 @@ public class PickUpItem : MonoBehaviour
                 Destroy(gameObject);
             }else if (gameObject.tag.Equals("DamageObject"))
             {
+                ongoingDamage = true;
                 am = collision.gameObject.GetComponent<AstronautMovement>();
-                am.decreaseHealth(50);
+                if(ongoingDamage)
+                {
+                    InvokeRepeating("damageOverTime", 0f, 2f);
+
+                }
+      
+                
 
             }
 
@@ -61,5 +79,10 @@ public class PickUpItem : MonoBehaviour
             
         }
         
+    }
+
+    private void damageOverTime()
+    {
+        am.decreaseHealth(50);
     }
 }
