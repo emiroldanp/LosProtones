@@ -31,6 +31,7 @@ public class EnemyController : MonoBehaviour
             
             life--;
             if(life == 0){
+                SoundManager.PlaySound("MeteoriteDestroy");
                 Destroy(gameObject);
             }
         }

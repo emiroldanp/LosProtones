@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider){
         
         if(collider.gameObject.tag.Equals("Enemy")){
+            SoundManager.PlaySound("PlayerHit");
             spriteRenderer.color = Color.red;
             InvokeRepeating("resetColor",1,0);
             life--;
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         if(collider.gameObject.tag.Equals("EnemyMissile")){
+            SoundManager.PlaySound("PlayerHit");
             spriteRenderer.color = Color.red;
             InvokeRepeating("resetColor",1,0);
             Destroy(collider.gameObject);
