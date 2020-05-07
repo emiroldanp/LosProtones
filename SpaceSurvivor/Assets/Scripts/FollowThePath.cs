@@ -17,6 +17,8 @@ public class FollowThePath : MonoBehaviour {
     public float startTimeBtwShots;
 
     public GameObject projectile;
+
+    public int health;
     //private Transform player;
 
 
@@ -83,6 +85,15 @@ public class FollowThePath : MonoBehaviour {
             {
                 waypointIndex += 1;
             }
+        }
+    }
+
+    public void DamageEnemy(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

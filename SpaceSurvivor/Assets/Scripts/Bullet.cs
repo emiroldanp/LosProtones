@@ -20,6 +20,17 @@ public class Bullet : MonoBehaviour
 
     	}
 
-        
+        if (collider.gameObject.tag.Equals("Gollem"))
+        {
+            Debug.Log("Hit gollem");
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+
+            collider.GetComponent<FollowThePath>().DamageEnemy(damageToGive);
+            Destroy(gameObject);
+            Destroy(effect, 2f);
+
+        }
+
+
     }
 }
