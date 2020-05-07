@@ -14,6 +14,7 @@ TagManager:
   - Health
   - DamageObject
   - Snow
+  - Gollem
   layers:
   - Default
   - TransparentFX
