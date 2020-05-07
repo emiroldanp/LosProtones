@@ -47,20 +47,7 @@ public class IceGolemScript : MonoBehaviour
 
         rb.velocity = moveDirection * moveSpeed;
 
-        if(anim != null)
-        {
-            if (moveDirection != Vector3.zero)
-            {
-
-                anim.SetBool("isRunning", true);
-
-            }
-            else
-            {
-
-                anim.SetBool("isRunning", false);
-            }
-        }
+    
 
         if(timeBtwShots <= 0)
         {
