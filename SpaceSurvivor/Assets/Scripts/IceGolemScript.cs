@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlienController : MonoBehaviour
+public class IceGolemScript : MonoBehaviour
 {
-
+    
 	public Rigidbody2D rb;
 	public float moveSpeed;
 
@@ -13,31 +13,21 @@ public class AlienController : MonoBehaviour
 
 	public Animator anim;
 
-	public int health = 150;
+	public int health = 450;
 
+    private float timeBtwShots;
 
-	//public bool shouldShoot;
-	//public GameObject bullet;
+    public float startTimeBtwShots;
 
-	//public Transform firePoint;
-	//public float fireRate;
-	//private float fireCounter;
+    public GameObject projectile;
 
-
-
-
-
-	//public int 
-
-
-
-    // Start is called before the first frame update
+   
     void Start()
     {
+        timeBtwShots = startTimeBtwShots;
         
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -72,23 +62,17 @@ public class AlienController : MonoBehaviour
             }
         }
 
-        
+        if(timeBtwShots <= 0)
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            timeBtwShots = startTimeBtwShots;
 
-/*
-        if(shouldShoot){
+        } else {
+            timeBtwShots -= Time.deltaTime;
+        }
 
-        	fireCounter -= Time.deltaTime;
+      
 
-        	if(fireCounter <= 0){
-
-        		Instantiate(bullet, firePoint.position, firePoint.rotation);
-
-        		fireCounter = fireRate;
-        		
-
-        	}
-
-        }*/
 
 
 

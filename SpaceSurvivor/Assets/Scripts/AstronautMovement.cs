@@ -161,12 +161,21 @@ public class AstronautMovement : MonoBehaviour
         {
             hud.showMessagePanel("Press F to pick up");
         }
-        */
+        
 
         if(collision.gameObject.tag.Equals("Enemy")){
 
         	decreaseHealth(100);
         }
+
+        if(collision.gameObject.tag == "snow") {
+ 
+            collision.rigidbody.AddForce (0, -10, 0);
+ 
+    
+        }
+        */
+ 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -177,7 +186,10 @@ public class AstronautMovement : MonoBehaviour
             hud.hideMessagePanel();
         }
         */
+       
     }
+
+   
 
 
     private float HUDValue(float x, float inMin, float inMax, float outMin, float outMax)
