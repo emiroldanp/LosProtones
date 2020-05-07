@@ -20,14 +20,6 @@ public class PickUpItem : MonoBehaviour
             
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.tag.Equals("DamageObject"))
-        {
-            ongoingDamage = false;
-            CancelInvoke();
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -50,11 +42,7 @@ public class PickUpItem : MonoBehaviour
             {
                 ongoingDamage = true;
                 am = collision.gameObject.GetComponent<AstronautMovement>();
-                if(ongoingDamage)
-                {
-                    InvokeRepeating("damageOverTime", 0f, 2f);
-
-                }
+                am.decreaseHealth(10);
       
                 
 
@@ -81,8 +69,20 @@ public class PickUpItem : MonoBehaviour
         
     }
 
-    private void damageOverTime()
+    void OnTriggerStay2D(Collider2D collision)
     {
-        am.decreaseHealth(50);
+        if (gameObject.tag.Equals("DamageObject"))
+        {
+            
+            if (collision.gameObject.tag.Equals("Player"))
+            {   
+                am = collision.gameObject.GetComponent<AstronautMovement>();
+                am.decreaseHealth(10 * Time.deltaTime);
+            }
+
+
+
+
+        }
     }
 }

@@ -134,7 +134,7 @@ public class AstronautMovement : MonoBehaviour
 
 
         if(Input.GetMouseButtonDown(0)){
-
+            SoundManager.PlaySound("AstronautWeaponSound");
             Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
 
 
@@ -175,21 +175,34 @@ public class AstronautMovement : MonoBehaviour
     
         }
         */
+        if (collision.gameObject.tag.Equals("EnemyMissile"))
+        {
+            SoundManager.PlaySound("PlayerHit");
+            decreaseHealth(10);
+        }
  
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        /*
-        if (collision.gameObject.tag.Equals("Object"))
+        if (collision.gameObject.tag.Equals("Snow"))
         {
-            hud.hideMessagePanel();
+            Debug.Log("Not snowy");
+            moveSpeed = 4;
         }
-        */
-       
+
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Snow"))
+        {
+            Debug.Log("Snowy");
+            moveSpeed = 2;
+        }
+    }
    
+
 
 
     private float HUDValue(float x, float inMin, float inMax, float outMin, float outMax)
@@ -249,6 +262,17 @@ public class AstronautMovement : MonoBehaviour
         health -= amount;
         updateHealth();
         
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void decreaseHealth(float amount)
+    {
+        health -= Mathf.RoundToInt(amount+1);
+        updateHealth();
+
         if (health <= 0)
         {
             Destroy(gameObject);

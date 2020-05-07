@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip planetHitSound, meteorHitSound, fireSound, planetGrowSound;
+    public static AudioClip planetHitSound, meteorHitSound, fireSound, planetGrowSound, astronautWeaponSound;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
         planetHitSound = Resources.Load<AudioClip>("PlayerHit");
         fireSound = Resources.Load<AudioClip>("LaserSound");
         planetGrowSound = Resources.Load<AudioClip>("Positive Sound");
+        astronautWeaponSound = Resources.Load<AudioClip>("AstronautWeaponSound");
         audioSrc = GetComponent<AudioSource>();
     }
 
@@ -43,6 +44,10 @@ public class SoundManager : MonoBehaviour
             case "Positive Sound":
 
                 audioSrc.PlayOneShot(planetGrowSound);
+                break;
+            case "AstronautWeaponSound":
+
+                audioSrc.PlayOneShot(astronautWeaponSound);
                 break;
         }
     }
