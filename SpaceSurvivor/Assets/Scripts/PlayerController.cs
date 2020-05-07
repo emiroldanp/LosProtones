@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             health = life/30f;
             if(life == 0){
                 Destroy(gameObject);
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene("TileScene");
             }
         }
     }
