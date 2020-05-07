@@ -13,6 +13,7 @@ TagManager:
   - Oxygen
   - Health
   - DamageObject
+  - Snow
   - Gollem
   layers:
   - Default
