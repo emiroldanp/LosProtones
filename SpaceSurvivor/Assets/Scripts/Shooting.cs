@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-       GameObject bulletInstance = Instantiate(bullet, firePoint.position, firePoint.rotation);
+        GameObject bulletInstance = Instantiate(bullet, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * force, ForceMode2D.Impulse);
     }
