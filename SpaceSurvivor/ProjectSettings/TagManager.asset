@@ -15,6 +15,7 @@ TagManager:
   - DamageObject
   - Snow
   - Gollem
+  - DecreaseOxygen
   layers:
   - Default
   - TransparentFX

@@ -10,8 +10,6 @@ public class PickUpItem : MonoBehaviour
 
     private AstronautMovement am;
 
-    private bool ongoingDamage;
-
     
     // Start is called before the first frame update
     void Start()
@@ -40,15 +38,24 @@ public class PickUpItem : MonoBehaviour
                 Destroy(gameObject);
             }else if (gameObject.tag.Equals("DamageObject"))
             {
-                ongoingDamage = true;
+                
                 am = collision.gameObject.GetComponent<AstronautMovement>();
                 am.decreaseHealth(10);
       
                 
 
             }
+            else if (gameObject.tag.Equals("DecreaseOxygen"))
+            {
 
-            
+                am = collision.gameObject.GetComponent<AstronautMovement>();
+                am.decreaseOxygen(5);
+
+
+
+            }
+
+
             else
             {
                 for (int i = 0; i < inventory.slots.Length; i++)
@@ -78,6 +85,16 @@ public class PickUpItem : MonoBehaviour
             {   
                 am = collision.gameObject.GetComponent<AstronautMovement>();
                 am.decreaseHealth(10 * Time.deltaTime);
+            }
+        }
+
+        if (gameObject.tag.Equals("DecreaseOxygen"))
+        {
+
+            if (collision.gameObject.tag.Equals("Player"))
+            {
+                am = collision.gameObject.GetComponent<AstronautMovement>();
+                am.decreaseOxygen(10 * Time.deltaTime);
             }
 
 

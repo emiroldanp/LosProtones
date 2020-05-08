@@ -30,7 +30,6 @@ public class AstronautMovement : MonoBehaviour
 
     public Animator anim;
 
-    bool isRunning = false;
 
     public HUDManager hud;
 
@@ -289,6 +288,17 @@ public class AstronautMovement : MonoBehaviour
     public void decreaseOxygen(int amount)
     {
         oxygen -= amount;
+        updateOxygen();
+
+        if (oxygen <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void decreaseOxygen(float amount)
+    {
+        oxygen -= Mathf.RoundToInt(amount + 1);
         updateOxygen();
 
         if (oxygen <= 0)
