@@ -5,6 +5,8 @@ using UnityEngine;
 public class IceProjectile : MonoBehaviour
 {
     public float speed;
+    
+    public float speed2;
     private Transform player;
     private Vector2 target;
 
@@ -27,6 +29,7 @@ public class IceProjectile : MonoBehaviour
             //DestroyProjectile();
         }
     }
+    
 /*
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
