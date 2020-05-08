@@ -12,7 +12,6 @@ public class Checkpoint : MonoBehaviour {
             Debug.Log("Updates coordinates");
             gm.lastCheckPointPos = transform.position;
             SoundManager.PlaySound("Checkpoint");
-            Debug.Log("Sound works");
         }
     }
 }
