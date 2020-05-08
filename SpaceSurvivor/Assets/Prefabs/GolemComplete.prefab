@@ -154,7 +154,7 @@ MonoBehaviour:
   startTimeBtwShots: 3
   projectile: {fileID: 82077128866393468, guid: 6d7065e0474184605a2861ccb728ad49,
     type: 3}
-  health: 10000
+  health: 5000
 --- !u!50 &5124380822524026231
 Rigidbody2D:
   serializedVersion: 4

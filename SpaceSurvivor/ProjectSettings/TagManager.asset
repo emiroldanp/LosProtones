@@ -16,6 +16,8 @@ TagManager:
   - Snow
   - Gollem
   - DecreaseOxygen
+  - IceGollem
+  - FinalBoss
   layers:
   - Default
   - TransparentFX

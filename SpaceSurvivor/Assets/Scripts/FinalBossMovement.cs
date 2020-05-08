@@ -10,6 +10,8 @@ public class FinalBossMovement : MonoBehaviour
     public float stoppingDistance;
     public float retreatDistance;
 
+    public int health = 10000;
+
     public Transform player;
 
     // Start is called before the first frame update
@@ -31,5 +33,19 @@ public class FinalBossMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
 
         }
+    }
+
+    public void DamageEnemy(int damage)
+    {
+
+        health -= damage;
+
+        if (health <= 0)
+        {
+
+            Destroy(gameObject);
+
+        }
+
     }
 }
