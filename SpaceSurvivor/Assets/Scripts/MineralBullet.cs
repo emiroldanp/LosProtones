@@ -4,40 +4,21 @@ using UnityEngine;
 
 public class MineralBullet : MonoBehaviour
 {
-     public float speed;
-    private Transform player;
-    private Vector2 target;
+    public float speed;
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        target = new Vector2(player.position.x, player.position.y);
-
-        Destroy(gameObject, 3.5f);
+        Destroy(gameObject, 3f);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-        if(transform.position.x == target.x && transform.position.y == target.y){
-            DestroyProjectile();
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Player")){
-            DestroyProjectile();
-
-        }
-
+        transform.position += Vector3.right * speed * Time.deltaTime;
 
     }
-
-    void DestroyProjectile(){
-        Destroy(gameObject);
-    }
+       
 }

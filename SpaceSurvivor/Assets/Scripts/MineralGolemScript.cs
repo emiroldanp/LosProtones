@@ -12,11 +12,11 @@ public class MineralGolemScript : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 2f;
 
-    private float timeBtwShots;
+    //private float timeBtwShots;
 
-    public float startTimeBtwShots;
+    //public float startTimeBtwShots;
 
-    public GameObject projectile;
+    //public GameObject projectile;
     //private Transform player;
 
 
@@ -33,7 +33,7 @@ public class MineralGolemScript : MonoBehaviour
         // Set position of Enemy as position of the first waypoint
         transform.position = waypoints[waypointIndex].transform.position;
   
-        timeBtwShots = startTimeBtwShots;
+        //timeBtwShots = startTimeBtwShots;
         
 	}
 	
@@ -42,7 +42,7 @@ public class MineralGolemScript : MonoBehaviour
 
         // Move Enemy
         Move();
-
+    /*
         if(timeBtwShots <= 0)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
@@ -52,7 +52,7 @@ public class MineralGolemScript : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 
-      
+      */
 
 
       
