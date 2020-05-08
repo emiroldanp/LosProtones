@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cañon1 : MonoBehaviour
+public class Cannon1 : MonoBehaviour
 {
     public float frecuenciaDeMinerales = 2;
     public GameObject MineralBullet;

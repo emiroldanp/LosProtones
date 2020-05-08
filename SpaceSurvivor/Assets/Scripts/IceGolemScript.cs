@@ -11,6 +11,8 @@ public class IceGolemScript : MonoBehaviour
 	public float rangeToChasePlayer;
 	private Vector3 moveDirection;
 
+    public GameObject shipPart;
+
 	public Animator anim;
 
 	public int health = 450;
@@ -71,7 +73,9 @@ public class IceGolemScript : MonoBehaviour
 
     	if(health <= 0){
 
+            Instantiate(shipPart, gameObject.transform);
     		Destroy(gameObject);
+
 
     	}
 
