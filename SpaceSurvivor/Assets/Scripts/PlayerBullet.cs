@@ -52,6 +52,24 @@ public class PlayerBullet : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "IceGollem")
+        {
+
+            other.GetComponent<IceGolemScript>().DamageEnemy(damageToGive);
+            Destroy(gameObject);
+            Instantiate(impactEffect, transform.position, transform.rotation);
+
+        }
+
+        if (other.gameObject.tag == "FinalBoss")
+        {
+
+            other.GetComponent<FinalBossMovement>().DamageEnemy(damageToGive);
+            Destroy(gameObject);
+            Instantiate(impactEffect, transform.position, transform.rotation);
+
+        }
+
 
 
     }
