@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerPos : MonoBehaviour {
     private GameMaster gm;
+    //private PlayerController playerController;
 
     void Start() {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
