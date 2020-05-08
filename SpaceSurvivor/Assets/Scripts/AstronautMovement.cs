@@ -88,68 +88,77 @@ public class AstronautMovement : MonoBehaviour
     void Update()
     {
 
-        
-        
-    	moveInput.x = Input.GetAxisRaw("Horizontal");
+        if (!PauseMenu.gameIsPaused)
+        {
 
-    	moveInput.y = Input.GetAxisRaw("Vertical");
+            moveInput.x = Input.GetAxisRaw("Horizontal");
 
-        moveInput.Normalize();
+            moveInput.y = Input.GetAxisRaw("Vertical");
 
-
-        rigidBody.velocity = moveInput * moveSpeed;
-
-        //mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+            moveInput.Normalize();
 
 
+            rigidBody.velocity = moveInput * moveSpeed;
 
-        Vector3 mousePos = Input.mousePosition;
-
-        Vector3 screenPoint = camera.WorldToScreenPoint(transform.localPosition);
-
-
-        if (mousePos.x < screenPoint.x){
-
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-            gunArm.localScale = new Vector3(-1f,-1f,1f);
-
-        } else{
-
-            transform.localScale = Vector3.one;
-            gunArm.localScale = Vector3.one;
+            //mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
 
 
 
+            Vector3 mousePos = Input.mousePosition;
 
-        } 
-
-
-
-        //rotate gun arm
-
-        Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
-        float angle = Mathf.Atan2(offset.y, offset.x)* Mathf.Rad2Deg;
-        gunArm.rotation = Quaternion.Euler(0,0,angle);
+            Vector3 screenPoint = camera.WorldToScreenPoint(transform.localPosition);
 
 
-        if(Input.GetMouseButtonDown(0)){
-            SoundManager.PlaySound("AstronautWeaponSound");
-            Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
+            if (mousePos.x < screenPoint.x)
+            {
 
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+                gunArm.localScale = new Vector3(-1f, -1f, 1f);
 
+            }
+            else
+            {
 
-        }
+                transform.localScale = Vector3.one;
+                gunArm.localScale = Vector3.one;
 
 
 
 
-        if(moveInput != Vector2.zero){
+            }
 
-            anim.SetBool("isRunning",true);
 
-        } else {
 
-            anim.SetBool("isRunning",false);
+            //rotate gun arm
+
+            Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
+            float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+            gunArm.rotation = Quaternion.Euler(0, 0, angle);
+
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                SoundManager.PlaySound("AstronautWeaponSound");
+                Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
+
+
+
+            }
+
+
+
+
+            if (moveInput != Vector2.zero)
+            {
+
+                anim.SetBool("isRunning", true);
+
+            }
+            else
+            {
+
+                anim.SetBool("isRunning", false);
+            }
         }
         
     }
