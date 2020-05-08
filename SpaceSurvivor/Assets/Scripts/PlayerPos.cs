@@ -14,6 +14,7 @@ public class PlayerPos : MonoBehaviour {
 
     void Update() {
         if(Input.GetKeyDown(KeyCode.Space)) {
+            Debug.Log(("reloads pos"));
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

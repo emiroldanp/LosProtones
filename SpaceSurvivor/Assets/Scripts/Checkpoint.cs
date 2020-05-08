@@ -9,6 +9,7 @@ public class Checkpoint : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")) {
+            Debug.Log("Updates coordinates");
             gm.lastCheckPointPos = transform.position;
             SoundManager.PlaySound("Checkpoint");
         }
