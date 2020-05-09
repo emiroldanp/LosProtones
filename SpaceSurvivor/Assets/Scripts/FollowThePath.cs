@@ -21,6 +21,12 @@ public class FollowThePath : MonoBehaviour {
     public GameObject shipPart;
 
     public int health;
+
+    public float hp;
+
+
+    public HealthBarController healthBar;
+
     //private Transform player;
 
 
@@ -34,6 +40,9 @@ public class FollowThePath : MonoBehaviour {
 	// Use this for initialization
 	private void Start () {
 
+        hp = health / 5000f;
+
+        
         // Set position of Enemy as position of the first waypoint
         transform.position = waypoints[waypointIndex].transform.position;
   
@@ -44,6 +53,20 @@ public class FollowThePath : MonoBehaviour {
 	// Update is called once per frame
 	private void Update () {
 
+
+
+        if (hp >= 0)
+        {
+            healthBar.setSize(hp);
+        }
+        if (hp <= .5 && health > .2)
+        {
+            healthBar.setColor(Color.yellow);
+        }
+        if (hp <= .2)
+        {
+            healthBar.setColor(Color.red);
+        }
         // Move Enemy
         Move();
 
@@ -93,6 +116,11 @@ public class FollowThePath : MonoBehaviour {
     public void DamageEnemy(int damage)
     {
         health -= damage;
+
+        hp = health / 5000f;
+
+   
+
         if(health <= 0)
         {
             Instantiate(shipPart, transform.position, Quaternion.identity);

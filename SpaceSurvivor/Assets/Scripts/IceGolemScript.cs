@@ -23,9 +23,14 @@ public class IceGolemScript : MonoBehaviour
 
     public GameObject projectile;
 
+    public HealthBarController healthBar;
+
+    private float hp;
+
    
     void Start()
     {
+        hp = health / 5000f;
         timeBtwShots = startTimeBtwShots;
         
     }
@@ -33,7 +38,20 @@ public class IceGolemScript : MonoBehaviour
     void Update()
     {
 
-    	if(Vector3.Distance(transform.position, AstronautMovement.instance.transform.position) < rangeToChasePlayer){
+        if (hp >= 0)
+        {
+            healthBar.setSize(hp);
+        }
+        if (hp <= .5 && health > .2)
+        {
+            healthBar.setColor(Color.yellow);
+        }
+        if (hp <= .2)
+        {
+            healthBar.setColor(Color.red);
+        }
+
+        if (Vector3.Distance(transform.position, AstronautMovement.instance.transform.position) < rangeToChasePlayer){
 
     		moveDirection = AstronautMovement.instance.transform.position - transform.position;
     	} else {
@@ -70,6 +88,8 @@ public class IceGolemScript : MonoBehaviour
     public void DamageEnemy(int damage){
 
     	health -= damage;
+
+        hp = health / 5000f;
 
     	if(health <= 0){
 

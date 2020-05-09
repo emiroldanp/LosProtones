@@ -40,22 +40,30 @@ public class AlienController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    	if(Vector3.Distance(transform.position, AstronautMovement.instance.transform.position) < rangeToChasePlayer){
-
-    		moveDirection = AstronautMovement.instance.transform.position - transform.position;
-    	} else {
-
-    		moveDirection = Vector3.zero;
+        if (AstronautMovement.instance != null)
+        {
 
 
-    	}
+            if (Vector3.Distance(transform.position, AstronautMovement.instance.transform.position) < rangeToChasePlayer)
+            {
 
-        
+                moveDirection = AstronautMovement.instance.transform.position - transform.position;
+            }
+            else
+            {
 
-        moveDirection.Normalize();
+                moveDirection = Vector3.zero;
 
-        rb.velocity = moveDirection * moveSpeed;
+
+            }
+
+            moveDirection.Normalize();
+
+            rb.velocity = moveDirection * moveSpeed;
+
+        }
+
+       
 
         
 
