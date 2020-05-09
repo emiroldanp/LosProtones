@@ -22,7 +22,7 @@ public class PickUpItem : MonoBehaviour
     void Update() {
         if(inventory.isFull[inventory.slots.Length -1]){
             SceneManager.LoadScene("WinScene");
-            Debug.Log("Change to win scene");
+            Debug.Log("Win scene");
         }
     }
 
