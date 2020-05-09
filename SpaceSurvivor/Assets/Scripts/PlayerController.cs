@@ -48,9 +48,7 @@ public class PlayerController : MonoBehaviour
         
         if(collider.gameObject.tag.Equals("Enemy")){
             SoundManager.PlaySound("PlayerHit");
-
             spriteRenderer.color = Color.red;
-
             InvokeRepeating("resetColor",1,0);
             life--;
             if(life == 0){

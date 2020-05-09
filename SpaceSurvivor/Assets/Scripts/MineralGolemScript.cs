@@ -25,9 +25,7 @@ public class MineralGolemScript : MonoBehaviour
     //public GameObject projectile;
     //private Transform player;
 
-    public HealthBarController healthBar;
 
-    private float hp;
 
     // Index of current waypoint from which Enemy walks
     // to the next one
@@ -38,7 +36,6 @@ public class MineralGolemScript : MonoBehaviour
 	// Use this for initialization
 	private void Start () {
 
-        hp = health / 5000f;
         // Set position of Enemy as position of the first waypoint
         transform.position = waypoints[waypointIndex].transform.position;
   
@@ -48,22 +45,6 @@ public class MineralGolemScript : MonoBehaviour
 	
 	// Update is called once per frame
 	private void Update () {
-
-
-        if (hp >= 0)
-        {
-            healthBar.setSize(hp);
-        }
-        if (hp <= .5 && health > .2)
-        {
-            healthBar.setColor(Color.yellow);
-        }
-        if (hp <= .2)
-        {
-            healthBar.setColor(Color.red);
-        }
-
-
 
         // Move Enemy
         Move();
@@ -115,8 +96,6 @@ public class MineralGolemScript : MonoBehaviour
     {
 
         health -= damage;
-
-        hp = health / 5000f;
 
         if (health <= 0)
         {
