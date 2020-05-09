@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6ffe9f50eb045d4b67daa3eeb5d375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 30
+  life: 15
   health: 0
   spriteRenderer: {fileID: 1543855370}
   initialColor: {r: 0, g: 0, b: 0, a: 0}

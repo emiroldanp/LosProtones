@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6719048084145680183}
   - component: {fileID: 6719048084145680328}
-  - component: {fileID: 6393636141245756723}
+  - component: {fileID: 4712375604906792555}
   m_Layer: 0
   m_Name: MiniRock1
   m_TagString: Untagged
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6719048084145680329}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22.787714, y: -18.771845, z: 0}
   m_LocalScale: {x: 0.99416536, y: 0.99416536, z: 0.99416536}
   m_Children: []
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6393636141245756723
-BoxCollider2D:
+--- !u!60 &4712375604906792555
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,6 +105,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.25, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.525, y: -0.11}
+      - {x: 0.525, y: -0.02}
+      - {x: 0.49499997, y: 0.02}
+      - {x: 0.525, y: 0.25}
+      - {x: 0.525, y: 0.29999998}
+      - {x: 0.39499998, y: 0.41}
+      - {x: 0.185, y: 0.5}
+      - {x: -0.145, y: 0.5}
+      - {x: -0.325, y: 0.39999998}
+      - {x: -0.505, y: 0.24}
+      - {x: -0.53499997, y: 0.089999996}
+      - {x: -0.53499997, y: -0.19}
+      - {x: -0.39499998, y: -0.28}
+      - {x: -0.235, y: -0.28}
+      - {x: -0.074999996, y: -0.21}
+      - {x: 0.295, y: -0.21}
+      - {x: 0.505, y: -0.17}

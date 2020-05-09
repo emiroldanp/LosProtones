@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 7620556776161285976}
   - component: {fileID: 7620556776161285980}
   - component: {fileID: 7620556776161285981}
-  - component: {fileID: -5919307132001259035}
+  - component: {fileID: 2112503107775758467}
   m_Layer: 0
   m_Name: AlienMini
   m_TagString: Enemy
@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 7620556776161285977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 175.735, y: -17.22, z: 0}
-  m_LocalScale: {x: -0.47776338, y: 0.5188622, z: 0.44610584}
+  m_LocalScale: {x: -0.41289565, y: 0.4484143, z: 0.38553637}
   m_Children:
   - {fileID: 7620556775759626172}
   m_Father: {fileID: 0}
@@ -171,7 +171,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7620556776161285981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,11 +185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7620556776161285980}
-  moveSpeed: 2.5
-  rangeToChasePlayer: 6
+  moveSpeed: 2.4
+  rangeToChasePlayer: 15
   anim: {fileID: 7620556776161285976}
-  health: 150
---- !u!60 &
+  health: 1
+--- !u!60 &2112503107775758467
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +199,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
