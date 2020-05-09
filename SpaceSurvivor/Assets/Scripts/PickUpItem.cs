@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickUpItem : MonoBehaviour
 {
@@ -16,6 +17,12 @@ public class PickUpItem : MonoBehaviour
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             
+    }
+
+    void Update() {
+        if(inventory.isFull[inventory.slots.Length -1]){
+            SceneManager.LoadScene("WinScene");
+        }
     }
 
 
