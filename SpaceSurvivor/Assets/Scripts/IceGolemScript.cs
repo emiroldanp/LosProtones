@@ -73,8 +73,8 @@ public class IceGolemScript : MonoBehaviour
 
     	if(health <= 0){
 
-            Instantiate(shipPart, gameObject.transform);
-    		Destroy(gameObject);
+            Instantiate(shipPart, transform.position, Quaternion.identity);
+            Destroy(gameObject);
 
 
     	}

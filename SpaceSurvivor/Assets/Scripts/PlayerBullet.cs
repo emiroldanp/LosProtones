@@ -61,6 +61,15 @@ public class PlayerBullet : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "MineralGollem")
+        {
+
+            other.GetComponent<MineralGolemScript>().DamageEnemy(damageToGive);
+            Destroy(gameObject);
+            Instantiate(impactEffect, transform.position, transform.rotation);
+
+        }
+
         if (other.gameObject.tag == "FinalBoss")
         {
 

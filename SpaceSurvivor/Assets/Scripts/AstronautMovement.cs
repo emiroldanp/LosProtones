@@ -183,6 +183,13 @@ public class AstronautMovement : MonoBehaviour
     
         }
         */
+
+        if (collision.gameObject.tag.Equals("Snow"))
+        {
+            SoundManager.PlaySound("PlayerHit");
+            decreaseHealth(10);
+        }
+        
         if (collision.gameObject.tag.Equals("EnemyMissile"))
         {
             SoundManager.PlaySound("PlayerHit");
@@ -196,6 +203,7 @@ public class AstronautMovement : MonoBehaviour
         if (collision.gameObject.tag.Equals("Snow"))
         {
             Debug.Log("Not snowy");
+            
             moveSpeed = 4;
         }
 

@@ -54,8 +54,6 @@ public class PickUpItem : MonoBehaviour
 
 
             }
-
-
             else
             {
                 for (int i = 0; i < inventory.slots.Length; i++)

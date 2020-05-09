@@ -12,6 +12,12 @@ public class MineralGolemScript : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 2f;
 
+    public int health;
+
+    public GameObject shipPart;
+
+    public GameObject orbitingObject;
+
     //private float timeBtwShots;
 
     //public float startTimeBtwShots;
@@ -86,6 +92,25 @@ public class MineralGolemScript : MonoBehaviour
         }
     }
 
+    public void DamageEnemy(int damage)
+    {
 
-   
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Instantiate(shipPart, transform.position, Quaternion.identity);
+
+            Destroy(gameObject);
+            
+            
+            
+
+
+        }
+
+    }
+
+
+
 }

@@ -8,8 +8,8 @@ public class GameMaster : MonoBehaviour {
     public Vector2 lastCheckPointPos;
 
     void Awake() {
-        if(instance==null) {
-            instance=this;
+        if(instance == null) {
+            instance = this;
             DontDestroyOnLoad(instance);
         } else {
             Destroy(gameObject);

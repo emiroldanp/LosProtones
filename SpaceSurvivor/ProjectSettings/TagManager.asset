@@ -19,6 +19,8 @@ TagManager:
   - GM
   - IceGollem
   - FinalBoss
+  - MineralGollem
+  - AlienMini
   layers:
   - Default
   - TransparentFX

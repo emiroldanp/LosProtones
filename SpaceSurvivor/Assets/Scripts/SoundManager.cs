@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
         planetHitSound = Resources.Load<AudioClip>("PlayerHit");
         fireSound = Resources.Load<AudioClip>("LaserSound");
         planetGrowSound = Resources.Load<AudioClip>("Positive Sound");
-        astronautWeaponSound = Resources.Load<AudioClip>("AstronautWeaponSound");
+        astronautWeaponSound = Resources.Load<AudioClip>("AstronautWeapon");
         checkpoint = Resources.Load<AudioClip>("Checkpoint");
         audioSrc = GetComponent<AudioSource>();
     }
@@ -26,6 +26,7 @@ public class SoundManager : MonoBehaviour
 
     public static void PlaySound(string clip)
     {
+        audioSrc.volume = 1f;
 
 
         switch (clip)
@@ -47,11 +48,11 @@ public class SoundManager : MonoBehaviour
                 audioSrc.PlayOneShot(planetGrowSound);
                 break;
             case "AstronautWeaponSound":
-
+                audioSrc.volume = 0.1f;
                 audioSrc.PlayOneShot(astronautWeaponSound);
                 break;
             case "Checkpoint":
-
+                audioSrc.volume = 0.3f;
                 audioSrc.PlayOneShot(checkpoint);
                 break;
         }

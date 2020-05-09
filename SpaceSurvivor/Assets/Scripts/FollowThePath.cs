@@ -18,6 +18,8 @@ public class FollowThePath : MonoBehaviour {
 
     public GameObject projectile;
 
+    public GameObject shipPart;
+
     public int health;
     //private Transform player;
 
@@ -93,7 +95,11 @@ public class FollowThePath : MonoBehaviour {
         health -= damage;
         if(health <= 0)
         {
+            Instantiate(shipPart, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            
+
+            
         }
     }
 

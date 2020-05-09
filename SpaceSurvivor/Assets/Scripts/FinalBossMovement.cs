@@ -14,6 +14,8 @@ public class FinalBossMovement : MonoBehaviour
 
     public Transform player;
 
+    public GameObject shipPart;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class FinalBossMovement : MonoBehaviour
 
         if (health <= 0)
         {
-
+            Instantiate(shipPart, transform.position, Quaternion.identity);
             Destroy(gameObject);
 
         }

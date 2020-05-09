@@ -31,10 +31,15 @@ public class Mineral1 : MonoBehaviour
 	
 	// Update is called once per frame
 	private void Update () {
-
-        // Move Enemy
-        Move();
-   
+        if (gameObject != null)
+        {
+            if(!gameObject.GetComponentInParent<Transform>() == null)
+            {
+                // Move Enemy
+                Move();
+            }
+           
+        }
 
       
 	}
@@ -42,29 +47,32 @@ public class Mineral1 : MonoBehaviour
     // Method that actually make Enemy walk
     private void Move()
     {
-        // If Enemy didn't reach last waypoint it can move
-        // If enemy reached last waypoint then it stops
-        if(waypointIndex == waypoints.Length){
-            waypointIndex = 0;
-        }
-
-        if (waypointIndex <= waypoints.Length - 1)
-        {
-
-            // Move Enemy from current waypoint to the next one
-            // using MoveTowards method
-            transform.position = Vector2.MoveTowards(transform.position,
-               waypoints[waypointIndex].transform.position,
-               moveSpeed * Time.deltaTime);
-
-            // If Enemy reaches position of waypoint he walked towards
-            // then waypointIndex is increased by 1
-            // and Enemy starts to walk to the next waypoint
-            if (transform.position == waypoints[waypointIndex].transform.position)
+        
+            // If Enemy didn't reach last waypoint it can move
+            // If enemy reached last waypoint then it stops
+            if (waypointIndex == waypoints.Length)
             {
-                waypointIndex += 1;
+                waypointIndex = 0;
             }
-        }
+
+            if (waypointIndex <= waypoints.Length - 1)
+            {
+
+                // Move Enemy from current waypoint to the next one
+                // using MoveTowards method
+                transform.position = Vector2.MoveTowards(transform.position,
+                waypoints[waypointIndex].transform.position,
+                moveSpeed * Time.deltaTime);
+
+                // If Enemy reaches position of waypoint he walked towards
+                // then waypointIndex is increased by 1
+                // and Enemy starts to walk to the next waypoint
+                if (transform.position == waypoints[waypointIndex].transform.position)
+                {
+                    waypointIndex += 1;
+                }
+            }
+        
     }
 
 
