@@ -31,8 +31,8 @@ TagManager:
   - 
   - 
   - FrameLayer
-  - 
-  - 
+  - sign
+  - Player
   - 
   - 
   - 
@@ -58,6 +58,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer
+  - name: Player
+    uniqueID: 1230377885
+    locked: 0
+  - name: Sign
     uniqueID: 1646255541
+    locked: 0
+  - name: New Layer
+    uniqueID: 248161687
     locked: 0

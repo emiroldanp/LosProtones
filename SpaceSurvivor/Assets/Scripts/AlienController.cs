@@ -23,18 +23,16 @@ public class AlienController : MonoBehaviour
 	//public float fireRate;
 	//private float fireCounter;
 
+    bool lookingRight = true;
 
 
-
-
-	//public int 
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -63,8 +61,12 @@ public class AlienController : MonoBehaviour
 
         }
 
-       
 
+        if((!lookingRight && rb.velocity.x > 0) || (lookingRight && rb.velocity.x < 0)){
+            Flip();
+        }
+
+    
         
 
 /*
@@ -97,6 +99,15 @@ public class AlienController : MonoBehaviour
 
     	}
 
+    }
+
+    void Flip(){
+
+        lookingRight = !lookingRight;
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
 
