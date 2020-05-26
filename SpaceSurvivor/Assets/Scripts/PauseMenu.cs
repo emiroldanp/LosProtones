@@ -11,9 +11,13 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject HUD;
 
+    public GameMaster gm;
+
     private void Start()
     {
         PauseUI.SetActive(false);
+
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -56,6 +60,16 @@ public class PauseMenu : MonoBehaviour
 
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Hello");
+    }
+
+    public void Save()
+    {
+        gm.Save();
+    }
+
+    public void Load()
+    {
+        gm.Load();
     }
 
     public void Quit()

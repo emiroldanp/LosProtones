@@ -10,9 +10,9 @@ public class AstronautMovement : MonoBehaviour
 	public float moveSpeed;
 	private Vector2 moveInput;
 
-    private float health;
+    public int health;
 
-    private float oxygen;
+    public int oxygen;
 
     public int maxHealthValue = 500;
 

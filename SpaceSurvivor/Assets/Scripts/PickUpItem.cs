@@ -71,6 +71,7 @@ public class PickUpItem : MonoBehaviour
                         inventory.isFull[i] = true;
 
                         Instantiate(item, inventory.slots[i].transform, false);
+                        Debug.Log(item);
                         Debug.Log("Picked up item");
                         Destroy(gameObject);
                         break;
