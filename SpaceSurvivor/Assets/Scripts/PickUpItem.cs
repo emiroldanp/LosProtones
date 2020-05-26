@@ -11,6 +11,8 @@ public class PickUpItem : MonoBehaviour
 
     private AstronautMovement am;
 
+    private int counter;
+
     
     // Start is called before the first frame update
     void Start()
@@ -66,11 +68,12 @@ public class PickUpItem : MonoBehaviour
             {
                 for (int i = 0; i < inventory.slots.Length; i++)
                 {
-                    if (!inventory.isFull[i])
+                    if (!inventory.isFull[i] && counter == 0)
                     {
                         inventory.isFull[i] = true;
 
                         Instantiate(item, inventory.slots[i].transform, false);
+                        counter++;
                         Debug.Log(item);
                         Debug.Log("Picked up item");
                         Destroy(gameObject);
