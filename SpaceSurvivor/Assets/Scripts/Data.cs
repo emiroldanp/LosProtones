@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 [ System.Serializable ]
 public class Data
@@ -21,14 +23,29 @@ public class Data
     public bool mineralGolemAlive = true;
     public bool finalBossAlive = true;
 
-    
+    public int[] tags;
 
-
-    public Data(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss)
+    public Data(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss, List<GameObject> items)
     {
         health = player.health;
         oxygen = player.oxygen;
 
+
+        if(items.Count > 0)
+        {
+            Debug.Log("Entered");
+            tags = new int[items.Count];
+            for (int i = 0; i < items.Count; i++)
+            {
+                if(items[i].tag != "Untagged")
+                {
+                    string tag = items[i].tag;
+                    Debug.Log(tag);
+                    tags[i] = int.Parse(tag);
+                }
+                
+            }
+        }
 
         if(iceGolem != null)
         {

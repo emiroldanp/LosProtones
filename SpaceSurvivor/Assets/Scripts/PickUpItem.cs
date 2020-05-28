@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+[System.Serializable]
 public class PickUpItem : MonoBehaviour
 {
     private Inventory inventory;
 
+    
     public GameObject item;
 
     private AstronautMovement am;
 
     private int counter;
 
+    GameMaster gm;
+
     
     // Start is called before the first frame update
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-            
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
 
     void Update() {
@@ -72,9 +75,10 @@ public class PickUpItem : MonoBehaviour
                     {
                         inventory.isFull[i] = true;
 
+                        inventory.slots[i].tag = item.tag;
+
                         Instantiate(item, inventory.slots[i].transform, false);
                         counter++;
-                        Debug.Log(item);
                         Debug.Log("Picked up item");
                         Destroy(gameObject);
                         break;

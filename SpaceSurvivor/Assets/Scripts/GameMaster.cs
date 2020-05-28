@@ -10,6 +10,13 @@ public class GameMaster : MonoBehaviour {
     public FollowThePath lavaGolem;
     public MineralGolemScript mineralGolem;
     public FinalBossMovement finalBoss;
+    public  List<GameObject> items;
+    private Inventory inventory;
+
+    private int[] tags;
+
+    public GameObject[] shipParts;
+
 
     public bool finalBossDefeated;
     public bool iceGolemDefeated;
@@ -18,17 +25,19 @@ public class GameMaster : MonoBehaviour {
 
     private bool hasSaved;
 
+    List<string> visitedTags = new List<string>();
+
     private static GameMaster instance;
     public Vector2 lastCheckPointPos;
 
     public void Start()
     {
-        
         if (hasSaved)
         {
             Load();
         }
-        
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+
     }
     /*void Awake() {
         if(instance == null) {
@@ -41,13 +50,27 @@ public class GameMaster : MonoBehaviour {
 
     public void Save()
     {
+        
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if(!inventory.slots[i].CompareTag("Untagged") && visitedTags.IndexOf(inventory.slots[i].tag) <0)
+            {
+                Debug.Log("inventory " + inventory.slots[i]);
+               
+                items.Add(inventory.slots[i]);
+                visitedTags.Add(inventory.slots[i].tag);
+            }
+
+            
+        }
+        Debug.Log("inventory length " + items.Count);
         Debug.Log("Player: " + player);
-        Save(player, iceGolem, lavaGolem, mineralGolem, finalBoss);
+        Save(player, iceGolem, lavaGolem, mineralGolem, finalBoss, items);
     }
 
-    private void Save(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss)
+    private void Save(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss, List<GameObject> items)
     {
-        SaveSystem.Save(player, iceGolem, lavaGolem, mineralGolem, finalBoss);
+        SaveSystem.Save(player, iceGolem, lavaGolem, mineralGolem, finalBoss, items);
         hasSaved = true;
     }
 
@@ -60,9 +83,16 @@ public class GameMaster : MonoBehaviour {
         iceGolemDefeated = !data.iceGolemAlive;
         finalBossDefeated = !data.finalBossAlive;
 
+        tags = data.tags;
+
+        LoadInventory();
 
         player.health = data.health;
         player.oxygen = data.oxygen;
+
+       
+
+        
 
         Vector3 position;
         position.x = data.positionPlayer[0];
@@ -160,6 +190,7 @@ public class GameMaster : MonoBehaviour {
             
         }
 
+      
 
     }
 
@@ -170,5 +201,50 @@ public class GameMaster : MonoBehaviour {
         lavaGolemDefeated = false;
         mineralGolemDefeated = false;
 }
+
+    public void LoadInventory()
+    {
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+
+        ClearInventory(inventory);
+        int pos;
+        Debug.Log(tags.Length);
+        for (int i = 0; i < tags.Length; i++)
+        {
+            
+          
+            
+            for (int j = 0; j < inventory.slots.Length; j++) {
+                if (!inventory.isFull[j])
+                {
+                    inventory.isFull[j] = true;
+
+
+                    pos = tags[i];
+                    Debug.Log("pos: "+pos);
+                    
+                    Instantiate(shipParts[pos-1], inventory.slots[j].transform, false);
+                    inventory.slots[j].tag = shipParts[pos - 1].tag;
+
+                    
+                    GameObject part = GameObject.FindGameObjectWithTag(shipParts[pos-1].tag + "p");
+                    if (part != null)
+                    {
+                        Destroy(part);
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
+    public void ClearInventory(Inventory inventory)
+    {
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            inventory.slots[i].tag = "Untagged";
+            inventory.isFull[i] = false;
+        }
+    }
 }
 
