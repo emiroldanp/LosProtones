@@ -21,6 +21,16 @@ TagManager:
   - FinalBoss
   - MineralGollem
   - AlienMini
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 1p
+  - 2p
+  - 3p
+  - 4p
+  - 5p
   layers:
   - Default
   - TransparentFX

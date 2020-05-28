@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-   public static void Save(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss)
+   public static void Save(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss, List<GameObject> items)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
@@ -14,7 +14,7 @@ public static class SaveSystem
 
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        Data data = new Data(player, iceGolem, lavaGolem, mineralGolem, finalBoss);
+        Data data = new Data(player, iceGolem, lavaGolem, mineralGolem, finalBoss, items);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -25,6 +25,7 @@ public static class SaveSystem
     {
         string path = Application.persistentDataPath + "/player.save";
 
+        Debug.Log(Application.persistentDataPath);
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
