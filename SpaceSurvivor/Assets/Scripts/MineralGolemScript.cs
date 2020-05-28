@@ -29,6 +29,7 @@ public class MineralGolemScript : MonoBehaviour
 
     private float hp;
 
+
     // Index of current waypoint from which Enemy walks
     // to the next one
     private int waypointIndex = 0;

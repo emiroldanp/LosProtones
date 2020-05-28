@@ -11,18 +11,33 @@ public class GameMaster : MonoBehaviour {
     public MineralGolemScript mineralGolem;
     public FinalBossMovement finalBoss;
 
+    public bool finalBossDefeated;
+    public bool iceGolemDefeated;
+    public bool lavaGolemDefeated;
+    public bool mineralGolemDefeated;
+
+    private bool hasSaved;
 
     private static GameMaster instance;
     public Vector2 lastCheckPointPos;
 
-    /*void Awake() {
+    public void Start()
+    {
+        
+        if (hasSaved)
+        {
+            Load();
+        }
+        
+    }
+    void Awake() {
         if(instance == null) {
             instance = this;
             DontDestroyOnLoad(instance);
         } else {
             Destroy(gameObject);
         }
-    }*/
+    }
 
     public void Save()
     {
@@ -33,11 +48,18 @@ public class GameMaster : MonoBehaviour {
     private void Save(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss)
     {
         SaveSystem.Save(player, iceGolem, lavaGolem, mineralGolem, finalBoss);
+        hasSaved = true;
     }
 
     public void Load()
     {
         Data data = SaveSystem.Load();
+
+        lavaGolemDefeated = !data.lavaGolemAlive;
+        mineralGolemDefeated = !data.mineralGolemAlive;
+        iceGolemDefeated = !data.iceGolemAlive;
+        finalBossDefeated = !data.finalBossAlive;
+
 
         player.health = data.health;
         player.oxygen = data.oxygen;
@@ -49,7 +71,7 @@ public class GameMaster : MonoBehaviour {
 
         player.transform.position = position;
 
-        if (data.positionFinalBoss != null && data.finalBossHealth > 0)
+        if (data.positionFinalBoss != null && !finalBossDefeated)
         {
             finalBoss.health = data.finalBossHealth;
 
@@ -63,10 +85,16 @@ public class GameMaster : MonoBehaviour {
         }
         else
         {
-            Destroy(finalBoss);
+            if(finalBoss != null)
+            {
+                finalBossDefeated = true;
+                Destroy(finalBoss.gameObject);
+            }
+            
+            
         }
 
-        if (data.positionIceGolem!= null && data.iceGolemHealth > 0)
+        if (data.positionIceGolem!= null && !finalBossDefeated)
         {
             iceGolem.health = data.iceGolemHealth;
 
@@ -80,10 +108,15 @@ public class GameMaster : MonoBehaviour {
         }
         else
         {
-            Destroy(iceGolem);
+            if(iceGolem != null)
+            {
+                iceGolemDefeated = true;
+                Destroy(iceGolem.gameObject);
+            }
+            
         }
 
-        if (data.positionLavaGolem != null && data.lavaGolemHealth > 0)
+        if (data.positionLavaGolem != null && !lavaGolemDefeated)
         {
             lavaGolem.health = data.lavaGolemHealth;
 
@@ -97,10 +130,15 @@ public class GameMaster : MonoBehaviour {
         }
         else
         {
-            Destroy(lavaGolem);
+            if(lavaGolem != null)
+            {
+                lavaGolemDefeated = true;
+                Destroy(lavaGolem.gameObject);
+            }
+            
         }
 
-        if (data.positionMineralGolem != null && data.mineralGolemHealth > 0)
+        if (data.positionMineralGolem != null && !mineralGolemDefeated)
         {
             mineralGolem.health = data.mineralGolemHealth;
 
@@ -114,10 +152,23 @@ public class GameMaster : MonoBehaviour {
         }
         else
         {
-            Destroy(mineralGolem);
+            if(mineralGolem != null)
+            {
+                mineralGolemDefeated = true;
+                Destroy(mineralGolem.gameObject);
+            }
+            
         }
 
 
     }
+
+    public void resetValues()
+    {
+        finalBossDefeated = false;
+        iceGolemDefeated = false;
+        lavaGolemDefeated = false;
+        mineralGolemDefeated = false;
+}
 }
 

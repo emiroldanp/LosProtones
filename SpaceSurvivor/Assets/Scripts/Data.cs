@@ -16,6 +16,13 @@ public class Data
     public float[] positionLavaGolem;
     public float[] positionMineralGolem;
     public float[] positionFinalBoss;
+    public bool iceGolemAlive = true;
+    public bool lavaGolemAlive = true;
+    public bool mineralGolemAlive = true;
+    public bool finalBossAlive = true;
+
+    
+
 
     public Data(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss)
     {
@@ -34,6 +41,11 @@ public class Data
             positionIceGolem[2] = iceGolem.transform.position.z;
 
             iceGolemHealth = iceGolem.health;
+
+        }
+        else
+        {
+            iceGolemAlive = false;
         }
 
         if(lavaGolem != null)
@@ -47,6 +59,10 @@ public class Data
             positionLavaGolem[2] = lavaGolem.transform.position.z;
 
         }
+        else
+        {
+            lavaGolemAlive = false;
+        }
 
         if(mineralGolem != null)
         {
@@ -58,6 +74,10 @@ public class Data
             positionMineralGolem[1] = mineralGolem.transform.position.y;
             positionMineralGolem[2] = mineralGolem.transform.position.z;
         }
+        else
+        {
+            mineralGolemAlive = false;
+        }
 
         if(finalBoss != null)
         {
@@ -68,6 +88,10 @@ public class Data
             positionFinalBoss[0] = finalBoss.transform.position.x;
             positionFinalBoss[1] = finalBoss.transform.position.y;
             positionFinalBoss[2] = finalBoss.transform.position.z;
+        }
+        else
+        {
+            finalBossAlive = false;
         }
 
        

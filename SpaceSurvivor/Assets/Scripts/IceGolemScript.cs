@@ -27,6 +27,7 @@ public class IceGolemScript : MonoBehaviour
 
     private float hp;
 
+
    
     void Start()
     {
