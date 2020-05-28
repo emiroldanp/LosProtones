@@ -30,14 +30,14 @@ public class GameMaster : MonoBehaviour {
         }
         
     }
-    void Awake() {
+    /*void Awake() {
         if(instance == null) {
             instance = this;
             DontDestroyOnLoad(instance);
         } else {
             Destroy(gameObject);
         }
-    }
+    }*/
 
     public void Save()
     {
