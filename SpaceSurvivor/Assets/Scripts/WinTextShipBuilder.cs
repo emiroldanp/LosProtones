@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinTextShipBuilder : MonoBehaviour
 {
     private int pointsToWin;
     private int currentPoints;
     public GameObject myShips;
+
+    public CounterRestarGameShip script;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,9 @@ public class WinTextShipBuilder : MonoBehaviour
     {
         if(currentPoints >= pointsToWin){
             transform.GetChild(1).gameObject.SetActive(true);
+
+            Invoke("LoadFinalScene", 1f);
+
         }
     }
 
@@ -27,4 +35,12 @@ public class WinTextShipBuilder : MonoBehaviour
         currentPoints++;
 
     }
+
+    public void LoadFinalScene(){
+
+        SceneManager.LoadScene("FinalWinScene");
+
+
+    }
+    
 }
