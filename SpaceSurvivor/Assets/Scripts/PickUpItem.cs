@@ -26,8 +26,7 @@ public class PickUpItem : MonoBehaviour
 
     void Update() {
         if(inventory.isFull[inventory.slots.Length -1]){
-            SceneManager.LoadScene("WinScene");
-            Debug.Log("Win scene");
+            SceneManager.LoadScene("ShipBuilder");
         }
     }
 

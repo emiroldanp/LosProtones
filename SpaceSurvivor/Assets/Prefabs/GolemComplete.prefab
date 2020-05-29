@@ -490,7 +490,7 @@ MonoBehaviour:
     type: 3}
   shipPart: {fileID: 6195192699309032663, guid: 8cff750cc84ea41059f20bebda2bd3b5,
     type: 3}
-  health: 10
+  health: 5000
   hp: 1
   healthBar: {fileID: 1710360728}
 --- !u!50 &5124380822524026231
