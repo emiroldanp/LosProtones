@@ -12,13 +12,9 @@ public class LavaProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.FindGameObjectWithTag("Player") != null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
-            target = new Vector2(player.position.x, player.position.y);
-        }
-        
+        target = new Vector2(player.position.x, player.position.y);
 
         Destroy(gameObject, 3f);
     }
