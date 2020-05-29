@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour {
 
@@ -25,32 +27,33 @@ public class GameMaster : MonoBehaviour {
 
     private bool hasSaved;
 
+
+    private bool assigned;
+
     List<string> visitedTags = new List<string>();
 
     private static GameMaster instance;
     public Vector2 lastCheckPointPos;
 
-    public void Start()
-    {
-        if (hasSaved)
-        {
-            Load();
-        }
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-
-    }
-    /*void Awake() {
+    
+    void Awake() {
         if(instance == null) {
+            Debug.Log("Hello");
             instance = this;
             DontDestroyOnLoad(instance);
         } else {
             Destroy(gameObject);
         }
-    }*/
+    }
 
     public void Save()
     {
-        
+        string path = Application.persistentDataPath + "/player.save";
+        if (SceneManager.GetActiveScene().name == "TileScene" && File.Exists(path))
+        {
+            assignScripts();
+        }
+
         for (int i = 0; i < inventory.slots.Length; i++)
         {
             if(!inventory.slots[i].CompareTag("Untagged") && visitedTags.IndexOf(inventory.slots[i].tag) <0)
@@ -63,9 +66,19 @@ public class GameMaster : MonoBehaviour {
 
             
         }
+        
         Debug.Log("inventory length " + items.Count);
         Debug.Log("Player: " + player);
         Save(player, iceGolem, lavaGolem, mineralGolem, finalBoss, items);
+        hasSaved = true;
+    }
+   private void Update()
+    {
+        if(SceneManager.GetActiveScene().name == "TileScene" && !assigned )
+        {
+            assignScripts();
+            assigned = true;
+        }
     }
 
     private void Save(AstronautMovement player, IceGolemScript iceGolem, FollowThePath lavaGolem, MineralGolemScript mineralGolem, FinalBossMovement finalBoss, List<GameObject> items)
@@ -76,6 +89,19 @@ public class GameMaster : MonoBehaviour {
 
     public void Load()
     {
+          
+
+        /*string path = Application.persistentDataPath + "/player.save";
+        if (SceneManager.GetActiveScene().name == "TileScene" && File.Exists(path) )
+        {
+            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<AstronautMovement>();
+            iceGolem = GameObject.FindGameObjectWithTag("IceGollem").GetComponent<IceGolemScript>();
+            lavaGolem = GameObject.FindGameObjectWithTag("Gollem").GetComponent<FollowThePath>();
+            mineralGolem = GameObject.FindGameObjectWithTag("MineralGollem").GetComponent<MineralGolemScript>();
+            finalBoss = GameObject.FindGameObjectWithTag("FinalBoss").GetComponent<FinalBossMovement>();
+        }
+        */
         Data data = SaveSystem.Load();
 
         lavaGolemDefeated = !data.lavaGolemAlive;
@@ -245,6 +271,45 @@ public class GameMaster : MonoBehaviour {
             inventory.slots[i].tag = "Untagged";
             inventory.isFull[i] = false;
         }
+    }
+
+    
+
+    public void assignScripts()
+    {
+        
+        
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<AstronautMovement>();
+
+        if (GameObject.FindGameObjectWithTag("IceGollem") != null)
+        {
+            iceGolem = GameObject.FindGameObjectWithTag("IceGollem").GetComponent<IceGolemScript>();
+        }
+
+
+
+        if (GameObject.FindGameObjectWithTag("Gollem") != null)
+        {
+            lavaGolem = GameObject.FindGameObjectWithTag("Gollem").GetComponent<FollowThePath>();
+        }
+
+        if (GameObject.FindGameObjectWithTag("MineralGollem") != null)
+        {
+            mineralGolem = GameObject.FindGameObjectWithTag("MineralGollem").GetComponent<MineralGolemScript>();
+        }
+
+        if (GameObject.FindGameObjectWithTag("FinalBoss") != null)
+        {
+            finalBoss = GameObject.FindGameObjectWithTag("FinalBoss").GetComponent<FinalBossMovement>();
+        }
+
+    }
+
+    public void LoadFromMainMenu()
+    {
+        Invoke("assignScripts", 1);
+        Invoke("Load", 0.5f);
     }
 }
 

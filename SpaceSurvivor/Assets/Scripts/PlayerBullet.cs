@@ -34,6 +34,15 @@ public class PlayerBullet : MonoBehaviour
         Instantiate(impactEffect, transform.position, transform.rotation);
 
      	}
+
+        if (other.gameObject.tag == "LightEnemy")
+        {
+
+            other.GetComponent<AlienController>().DamageEnemy(damageToGive);
+            Destroy(gameObject);
+            Instantiate(impactEffect, transform.position, transform.rotation);
+
+        }
         if (other.gameObject.tag == "ShootingEnemy")
         {
 
