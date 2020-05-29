@@ -10,7 +10,7 @@ public class FinalBossMovement : MonoBehaviour
     public float stoppingDistance;
     public float retreatDistance;
 
-    public int health;
+    public int health = 10000;
 
     public Transform player;
 
@@ -26,7 +26,6 @@ public class FinalBossMovement : MonoBehaviour
     void Start()
     {
         hp = health / 10000f;
-        healthBar.setSize(hp);
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

@@ -89,7 +89,6 @@ public class GameMaster : MonoBehaviour {
 
     public void Load()
     {
-        player.gameObject.SetActive(true);
           
 
         /*string path = Application.persistentDataPath + "/player.save";
@@ -305,11 +304,6 @@ public class GameMaster : MonoBehaviour {
             finalBoss = GameObject.FindGameObjectWithTag("FinalBoss").GetComponent<FinalBossMovement>();
         }
 
-    }
-
-    public void LoadNewGame()
-    {
-        Invoke("assignScripts", 1);
     }
 
     public void LoadFromMainMenu()
