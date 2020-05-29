@@ -4414,6 +4414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myShips: {fileID: 264986582}
+  script: {fileID: 530778711}
 --- !u!1001 &1328406765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6750,6 +6751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myShips: {fileID: 264986582}
+  script: {fileID: 0}
 --- !u!114 &1977744113
 MonoBehaviour:
   m_ObjectHideFlags: 0
