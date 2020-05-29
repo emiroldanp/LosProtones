@@ -194,8 +194,16 @@ public class AstronautMovement : MonoBehaviour
         {
             SoundManager.PlaySound("PlayerHit");
             decreaseHealth(10);
+            Debug.Log("hit");
         }
- 
+
+        if (collision.gameObject.tag.Equals("LightEnemy"))
+        {
+            SoundManager.PlaySound("PlayerHit");
+            decreaseHealth(20);
+            
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -215,6 +223,11 @@ public class AstronautMovement : MonoBehaviour
         {
             Debug.Log("Snowy");
             moveSpeed = 2;
+        }
+
+        if (collision.gameObject.tag.Equals("LightEnemy"))
+        {
+            decreaseHealth(10 * Time.deltaTime);
         }
     }
    

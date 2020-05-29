@@ -31,6 +31,7 @@ TagManager:
   - 3p
   - 4p
   - 5p
+  - LightEnemy
   layers:
   - Default
   - TransparentFX
