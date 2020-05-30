@@ -20,8 +20,6 @@ public class AstronautMovement : MonoBehaviour
 
     public int maxOxygenValue = 400;
 
-    public DeathMenu dm;
-
     public Rigidbody2D rigidBody;
     public Camera camera;
     Vector2 mousePosition;
@@ -83,8 +81,6 @@ public class AstronautMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateHealth();
-        updateOxygen();
 
         if (!PauseMenu.gameIsPaused)
         {
@@ -286,9 +282,7 @@ public class AstronautMovement : MonoBehaviour
 
         if (health <= 0)
         {
-            dm.gameObject.SetActive(true);
-            dm.Died();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -299,9 +293,7 @@ public class AstronautMovement : MonoBehaviour
 
         if (health <= 0)
         {
-            dm.gameObject.SetActive(true);
-            dm.Died();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -319,9 +311,7 @@ public class AstronautMovement : MonoBehaviour
 
         if (oxygen <= 0)
         {
-            dm.gameObject.SetActive(true);
-            dm.Died();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -332,9 +322,7 @@ public class AstronautMovement : MonoBehaviour
 
         if (oxygen <= 0)
         {
-            dm.gameObject.SetActive(true);
-            dm.Died();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 

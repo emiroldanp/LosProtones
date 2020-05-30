@@ -91,7 +91,6 @@ public class GameMaster : MonoBehaviour {
 
     public void Load()
     {
-        player.gameObject.SetActive(true);
           
         Data data = SaveSystem.Load();
         Debug.Log(data);
