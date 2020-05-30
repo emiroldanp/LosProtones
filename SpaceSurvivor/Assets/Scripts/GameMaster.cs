@@ -35,24 +35,26 @@ public class GameMaster : MonoBehaviour {
     private static GameMaster instance;
     public Vector2 lastCheckPointPos;
 
+    string path;
+
     
     void Awake() {
+        path = Application.persistentDataPath + "/player.save";
         if(instance == null) {
             Debug.Log("Hello");
             instance = this;
             DontDestroyOnLoad(instance);
-        } else {
+        }/* else {
             Destroy(gameObject);
         }
+        */
     }
 
     public void Save()
     {
-        string path = Application.persistentDataPath + "/player.save";
-        if (SceneManager.GetActiveScene().name == "TileScene" && File.Exists(path))
-        {
-            assignScripts();
-        }
+        
+        assignScripts();
+     
 
         for (int i = 0; i < inventory.slots.Length; i++)
         {
@@ -91,19 +93,8 @@ public class GameMaster : MonoBehaviour {
     {
         player.gameObject.SetActive(true);
           
-
-        /*string path = Application.persistentDataPath + "/player.save";
-        if (SceneManager.GetActiveScene().name == "TileScene" && File.Exists(path) )
-        {
-            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<AstronautMovement>();
-            iceGolem = GameObject.FindGameObjectWithTag("IceGollem").GetComponent<IceGolemScript>();
-            lavaGolem = GameObject.FindGameObjectWithTag("Gollem").GetComponent<FollowThePath>();
-            mineralGolem = GameObject.FindGameObjectWithTag("MineralGollem").GetComponent<MineralGolemScript>();
-            finalBoss = GameObject.FindGameObjectWithTag("FinalBoss").GetComponent<FinalBossMovement>();
-        }
-        */
         Data data = SaveSystem.Load();
+        Debug.Log(data);
 
         lavaGolemDefeated = !data.lavaGolemAlive;
         mineralGolemDefeated = !data.mineralGolemAlive;
@@ -307,15 +298,16 @@ public class GameMaster : MonoBehaviour {
 
     }
 
-    public void LoadNewGame()
-    {
-        Invoke("assignScripts", 1);
-    }
-
     public void LoadFromMainMenu()
     {
-        Invoke("assignScripts", 1);
+        Invoke("assignScripts", 0.5f);
         Invoke("Load", 0.5f);
+    }
+
+    public void LoadNewGame(){
+        Invoke("assignScripts",1f);
+        File.Delete(path);
+
     }
 }
 

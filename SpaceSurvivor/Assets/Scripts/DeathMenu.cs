@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,16 +16,32 @@ public class DeathMenu : MonoBehaviour
 
     public GameMaster gm;
 
+    public GameObject checkpointButton;
+
+    string path;
+
     private void Start()
     {
-       DeathUI.SetActive(false);
-        
+        DeathUI.SetActive(false);
 
+        path = Application.persistentDataPath + "/player.save";
+        if(!File.Exists(path)){
+            checkpointButton.SetActive(false);
+        } else {
+
+            checkpointButton.SetActive(true);
+        }
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
-
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        
+    }
 
     public void Resume()
     {
@@ -41,13 +58,20 @@ public class DeathMenu : MonoBehaviour
         PauseUI.SetActive(false);
         HUD.SetActive(false);
         gameIsPaused = true;
+
+        if (File.Exists(path))
+        {
+            checkpointButton.SetActive(true);
+        }
+
     }
 
     public void LoadMainMenu()
     {
 
         SceneManager.LoadScene("MainMenu");
-        
+        Time.timeScale = 1f;
+
     }
 
     public void Load()

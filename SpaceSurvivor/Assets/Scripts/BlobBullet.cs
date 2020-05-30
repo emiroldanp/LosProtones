@@ -12,13 +12,13 @@ public class BlobBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.FindGameObjectWithTag("Player") != null)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
             target = new Vector2(player.position.x, player.position.y);
         }
-        
+
 
         Destroy(gameObject, 3f);
     }
@@ -26,7 +26,8 @@ public class BlobBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player != null) {
+        if (player != null)
+        {
 
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
@@ -37,20 +38,21 @@ public class BlobBullet : MonoBehaviour
         }
 
 
-        
+
     }
-/*
-    void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Player")){
-            DestroyProjectile();
+    /*
+        void OnTriggerEnter2D(Collider2D other){
+            if(other.CompareTag("Player")){
+                DestroyProjectile();
+
+            }
+
 
         }
 
-
-    }
-
-*/
-    void DestroyProjectile(){
+    */
+    void DestroyProjectile()
+    {
         Destroy(gameObject);
     }
 

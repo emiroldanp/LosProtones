@@ -17,24 +17,24 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.FindGameObjectWithTag("Player") != null)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
     }
-        
+
 
     // Update is called once per frame
     void Update()
     {
-        if(target != null)
+        if (target != null)
         {
             rb.velocity = (AstronautMovement.instance.transform.position - transform.position) * speed;
         }
-        
 
-        
-        
+
+
+
     }
 
 

@@ -10,6 +10,10 @@ public class CounterRestarGameShip : MonoBehaviour
     public Text startText;
     public Text startText2;  // used for showing countdown from 3, 2, 1 
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
 
     void Update()
     {

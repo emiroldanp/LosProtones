@@ -31,10 +31,12 @@ public class Mineral1 : MonoBehaviour
 
 	// Use this for initialization
 	private void Start () {
-
+        
        
         // Set position of Enemy as position of the first waypoint
         transform.position = waypoints[waypointIndex].transform.position;
+        
+        waypointIndex = 0;
   
         //timeBtwShots = startTimeBtwShots;
         

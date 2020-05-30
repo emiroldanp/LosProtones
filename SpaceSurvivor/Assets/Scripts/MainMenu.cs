@@ -12,10 +12,13 @@ public class MainMenu : MonoBehaviour
     public GameMaster gm;
     private void Start()
     {
+        Time.timeScale = 1f;
         string path = Application.persistentDataPath + "/player.save";
         if (File.Exists(path))
         {
             loadGameButton.SetActive(true);
+        } else {
+            loadGameButton.SetActive(false);
         }
     }
     public void PlayGame()

@@ -67,7 +67,9 @@ public class PickUpItem : MonoBehaviour
 
             }
             else
-            {
+            { 
+                counter = 0;
+                
                 for (int i = 0; i < inventory.slots.Length; i++)
                 {
                     if (!inventory.isFull[i] && counter == 0)

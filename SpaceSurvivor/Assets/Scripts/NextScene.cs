@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-    private GameMaster gm;
-    private string nextSceneLoad;
+    private int nextSceneLoad;
     // Start is called before the first frame update
     void Start()
     {
-        nextSceneLoad = "TileScene";
-        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        Time.timeScale = 1f;
+        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 4;
         
     }
 
@@ -19,7 +18,6 @@ public class NextScene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene(nextSceneLoad);
-        gm.LoadNewGame();
         
     }
 }

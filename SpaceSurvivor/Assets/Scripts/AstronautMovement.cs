@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AstronautMovement : MonoBehaviour
 {
-	public static AstronautMovement instance;
+    public static AstronautMovement instance;
 
 
-	public float moveSpeed;
-	private Vector2 moveInput;
+    public float moveSpeed;
+
+
+    private Vector2 moveInput;
 
     public int health;
 
@@ -44,23 +46,15 @@ public class AstronautMovement : MonoBehaviour
     private float minXOxygen;
     private float maxXOxygen;
 
-  
-
-    
-
-
-
-
-
-
     public GameObject bulletToFire;
     public Transform firePoint;
 
 
 
-    private void Awake(){
+    private void Awake()
+    {
 
-    	instance = this;
+        instance = this;
     }
 
     // Start is called before the first frame update
@@ -68,7 +62,7 @@ public class AstronautMovement : MonoBehaviour
     {
         camera = Camera.main;
 
-        anim = GetComponent<Animator> ();
+        anim = GetComponent<Animator>();
         InvokeRepeating("constantOxygenDecrease", 0f, 1);
 
 
@@ -81,7 +75,7 @@ public class AstronautMovement : MonoBehaviour
 
         oxygen = maxOxygenValue;
 
-        
+
 
 
     }
@@ -101,12 +95,7 @@ public class AstronautMovement : MonoBehaviour
 
             moveInput.Normalize();
 
-
             rigidBody.velocity = moveInput * moveSpeed;
-
-            //mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
-
-
 
             Vector3 mousePos = Input.mousePosition;
 
@@ -164,7 +153,7 @@ public class AstronautMovement : MonoBehaviour
                 anim.SetBool("isRunning", false);
             }
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -193,7 +182,7 @@ public class AstronautMovement : MonoBehaviour
             SoundManager.PlaySound("PlayerHit");
             decreaseHealth(10);
         }
-        
+
         if (collision.gameObject.tag.Equals("EnemyMissile"))
         {
             SoundManager.PlaySound("PlayerHit");
@@ -205,7 +194,7 @@ public class AstronautMovement : MonoBehaviour
         {
             SoundManager.PlaySound("PlayerHit");
             decreaseHealth(20);
-            
+
         }
 
     }
@@ -215,7 +204,7 @@ public class AstronautMovement : MonoBehaviour
         if (collision.gameObject.tag.Equals("Snow"))
         {
             Debug.Log("Not snowy");
-            
+
             moveSpeed = 4;
         }
 
@@ -234,7 +223,7 @@ public class AstronautMovement : MonoBehaviour
             decreaseHealth(10 * Time.deltaTime);
         }
     }
-   
+
 
 
 
@@ -246,18 +235,18 @@ public class AstronautMovement : MonoBehaviour
 
     public void updateHealth()
     {
-        if(health > maxHealthValue)
+        if (health > maxHealthValue)
         {
             health = maxHealthValue;
         }
-        
-            float currentX = HUDValue(health, 0, maxHealthValue, minXHealth, maxXHealth);
 
-            
+        float currentX = HUDValue(health, 0, maxHealthValue, minXHealth, maxXHealth);
 
-            healthBar.position = new Vector3(currentX, healthBar.position.y);
-        
-       
+
+
+        healthBar.position = new Vector3(currentX, healthBar.position.y);
+
+
 
 
 
@@ -269,14 +258,14 @@ public class AstronautMovement : MonoBehaviour
         {
             oxygen = maxOxygenValue;
         }
-        
-            float currentX = HUDValue(oxygen, 0, maxOxygenValue, minXOxygen, maxXOxygen);
 
-            
+        float currentX = HUDValue(oxygen, 0, maxOxygenValue, minXOxygen, maxXOxygen);
 
-            oxygenBar.position = new Vector3(currentX, oxygenBar.position.y);
-        
-        
+
+
+        oxygenBar.position = new Vector3(currentX, oxygenBar.position.y);
+
+
 
 
 
@@ -294,7 +283,7 @@ public class AstronautMovement : MonoBehaviour
     {
         health -= amount;
         updateHealth();
-        
+
         if (health <= 0)
         {
             dm.gameObject.SetActive(true);
@@ -305,7 +294,7 @@ public class AstronautMovement : MonoBehaviour
 
     public void decreaseHealth(float amount)
     {
-        health -= Mathf.RoundToInt(amount+1);
+        health -= Mathf.RoundToInt(amount + 1);
         updateHealth();
 
         if (health <= 0)
